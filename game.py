@@ -2,10 +2,12 @@ import random
 
 from functions import game, read_input_continue_game
 
-continue_flag = True                                    # флаги выносим в начало
+hidden_number = random.randrange(0, 100)                # имена переменных должны нести логический смысл
+continue_flag = True                                    # флаги тоже выносим в начало
 
 while continue_flag:
-    hidden_number = random.randrange(0, 100)            # имена переменных должны нести логический смысл
+
+    # несколько вариантов построения игры. Можно закоментить/раскоментить и пробовать разные варианты
 
     # game()                                            # это будет просто игрой по-умолчанию
     # game(counter=5)                                   # это будет игрой с 5-ью попытками вместо трех
