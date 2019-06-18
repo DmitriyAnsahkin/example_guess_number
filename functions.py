@@ -5,8 +5,9 @@ def read_input_number() -> int:
     """Метод предлагает пользователю ввести в консоль целое число, обрабатывает ввод и возвращает это число.
 
     Returns:
-        _input_number:
+        input_number: введенное число.
     """
+
     input_correctly = False
     input_number = None
 
@@ -26,8 +27,8 @@ def compare_numbers(input_number: int, hidden_number: int) -> bool:
     """Метод сравнивает два целых числа и возвращает результат сравнения
 
     Args:
-        input_number:
-        hidden_number:
+        input_number: введенное пользователем число.
+        hidden_number: число сгенерированное системой, которое должен угадать пользователь.
 
     Returns:
         win: результат сравнения двух переменных
@@ -42,26 +43,6 @@ def compare_numbers(input_number: int, hidden_number: int) -> bool:
         win = False
 
     return win
-
-
-def read_input_continue_game() -> str:
-    """Метод выводит в консоль предложение продолжить игру и возвращает введенный ответ
-
-    Returns:
-        input_response: введенное пользователем значение.
-    """
-    input_correctly = False
-
-    while input_correctly is False:
-        input_response = str(input('Продолжить? (y/n): '))
-
-        if input_response != 'y' and input_response != 'n':
-            print('Ошибка. Попробуйте ввести один из предложенных вариантов.')
-
-        else:
-            input_correctly = True
-
-            return input_response
 
 
 def game(counter=3, hidden_number=None):
@@ -89,3 +70,23 @@ def game(counter=3, hidden_number=None):
             counter -= 1
             print(f'Осталось попыток: {counter}')
     print('Загаданное число: ' + str(hidden_number))
+
+
+def read_input_continue_game() -> str:
+    """Метод выводит в консоль предложение продолжить игру и возвращает введенный ответ
+
+    Returns:
+        input_response: введенное пользователем значение.
+    """
+    input_correctly = False
+
+    while input_correctly is False:
+        input_response = str(input('Продолжить? (y/n): '))
+
+        if input_response != 'y' and input_response != 'n':
+            print('Ошибка. Попробуйте ввести один из предложенных вариантов.')
+
+        else:
+            input_correctly = True
+
+            return input_response
